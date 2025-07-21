@@ -1,21 +1,4 @@
-const quiz = [
-  {
-    question: "What does HTML stand for?",
-    options: ["HyperText Markup Language", "Hot Mail", "How to Make Lasagna"],
-    answer: 0
-  },
-  {
-    question: "What is the capital of France?",
-    options: ["Berlin", "Madrid", "Paris"],
-    answer: 2
-  },
-  {
-    question: "What is 2 + 2?",
-    options: ["3", "4", "5"],
-    answer: 1
-  }
-];
-
+let quiz = [];
 let current = 0;
 let score = 0;
 
@@ -23,6 +6,13 @@ const qEl = document.getElementById("question");
 const optionsEl = document.getElementById("options");
 const nextBtn = document.getElementById("nextBtn");
 const scoreEl = document.getElementById("score");
+
+fetch("quiz-data.json")
+  .then((res) => res.json())
+  .then((data) => {
+    quiz = data;
+    loadQuestion();
+  });
 
 function loadQuestion() {
   const q = quiz[current];
@@ -52,4 +42,4 @@ function next() {
 }
 
 nextBtn.onclick = next;
-loadQuestion();
+

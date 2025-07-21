@@ -1,0 +1,17 @@
+[
+  {
+    "question": "What does HTML stand for?",
+    "options": ["HyperText Markup Language", "Hot Mail", "How to Make Lasagna"],
+    "answer": 0
+  },
+  {
+    "question": "What is the capital of France?",
+    "options": ["Berlin", "Madrid", "Paris"],
+    "answer": 2
+  },
+  {
+    "question": "What is 2 + 2?",
+    "options": ["3", "4", "5"],
+    "answer": 1
+  }
+]
