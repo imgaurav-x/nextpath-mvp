@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NextPath - Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Quiz Time</h2>
+
+    <div class="question">
+      <p>1. What does HTML stand for?</p>
+      <input type="radio" name="q1" value="a"> Hyper Text Markup Language<br>
+      <input type="radio" name="q1" value="b"> High Tech Modern Language<br>
+      <input type="radio" name="q1" value="c"> Home Tool Markup Language<br>
+    </div>
+
+    <div class="question">
+      <p>2. Which tag is used for JavaScript?</p>
+      <input type="radio" name="q2" value="a"> &lt;script&gt;<br>
+      <input type="radio" name="q2" value="b"> &lt;js&gt;<br>
+      <input type="radio" name="q2" value="c"> &lt;code&gt;<br>
+    </div>
+
+    <div class="question">
+      <p>3. What does CSS stand for?</p>
+      <input type="radio" name="q3" value="a"> Cascading Style Sheets<br>
+      <input type="radio" name="q3" value="b"> Creative Style Sheet<br>
+      <input type="radio" name="q3" value="c"> Computer Style System<br>
+    </div>
+
+    <button onclick="submitQuiz()">Submit</button>
+  </div>
+
+  <script>
+    function submitQuiz() {
+      let score = 0;
+
+      const answers = {
+        q1: "a",
+        q2: "a",
+        q3: "a"
+      };
+
+      for (let q in answers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) {
+          score++;
+        }
+      }
+
+      localStorage.setItem("score", score);
+      window.location.href = "result.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NextPath - Result</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Your Score</h2>
+    <p id="score-text"></p>
+    <div id="badge"></div>
+    <button onclick="restart()">Try Again</button>
+  </div>
+
+  <script>
+    const score = localStorage.getItem("score");
+    const scoreText = document.getElementById("score-text");
+    const badge = document.getElementById("badge");
+
+    scoreText.innerText = `You scored ${score}/3`;
+
+    if (score == 3) {
+      badge.innerHTML = "🏅 Gold Badge – Perfect!";
+    } else if (score == 2) {
+      badge.innerHTML = "🥈 Silver Badge – Great job!";
+    } else {
+      badge.innerHTML = "🥉 Bronze Badge – Keep practicing!";
+    }
+
+    function restart() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
